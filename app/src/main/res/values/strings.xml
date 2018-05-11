@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WorkoutLog</string>
+    <string name="action_settings">Settings</string>
+    <string name="summary">Summary</string>
+    <string name="routines">Routines</string>
+    <string name="exercises">Exercises</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
