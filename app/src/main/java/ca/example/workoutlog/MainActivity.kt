@@ -5,22 +5,25 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
+import ca.example.workoutlog.ui.MainViewPager.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private val TAG: String = "test"
-    private val routines = arrayOf("Leg", "Arms")
+    private lateinit var title: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.w(TAG, "onCreate")
+        Log.i(TAG, "onCreate")
 
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        println(routines)
-        view_pager.adapter = ViewPagerAdapter(supportFragmentManager)
+        title = toolbar.findViewById(R.id.toolbar_title)
+
+        view_pager.adapter = ViewPagerAdapter(supportFragmentManager, this@MainActivity)
         tab_layout.setupWithViewPager(view_pager)
 //        fab.setOnClickListener { view ->
 //            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -44,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
+/*    override fun onStart() {
         super.onStart()
         Log.w(TAG, "onStart")
     }
@@ -67,5 +70,5 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.w(TAG, "onDestroy")
-    }
+    }*/
 }
